@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    margin: 0px;
+    background-color: rgb(249 250 251);
+}
+
+#bg{
+    background-color: rgb(249 250 251)
+}
+
+.white{
+    color: white;
+}
+
+.transparent{
+    color: transparent;
+}
+
+
+
