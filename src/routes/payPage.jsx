@@ -103,7 +103,7 @@ function PayPage(){
                 <div className="flex items-start my-3 p-2">
                     <input defaultChecked={check} onChange={() => setCheck(prev => !prev)} type="checkbox" className="cursor-pointer w-6 h-6"/>
                     <label className="ml-2 text-sm font-medium text-white">
-                        Usted que al presionar el botón de compra acepta que, está brindando su apoyo a nuestra 
+                        Usted al presionar el botón de compra acepta que, está brindando su apoyo a nuestra 
                         plataforma, y no adquirirá ningún derecho ni autorización para utilizar el beat.
                     </label>
                 </div>
