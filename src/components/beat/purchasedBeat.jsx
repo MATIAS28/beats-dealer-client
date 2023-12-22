@@ -5,7 +5,7 @@ export const PurchasedBeat = ({beat}) => {
         <div className="flex justify-between items-center my-2 p-2 duration-200">
             <div className="flex items-center">
                 <div>
-                    <img src={img.url} className="w-9 h-9 rounded-full mr-2" />
+                    <img src={img.url || img} className="w-9 h-9 rounded-full mr-2" />
                 </div>
 
                 <div>
