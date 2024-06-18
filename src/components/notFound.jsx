@@ -1,9 +1,9 @@
 export const NotFound = ({name}) => {
     return(
-        <div className="flex justify-center items-center w-full min-h-screen">
-            <div className="flex items-center p-2 md:p-0">
-                <img src="/logo.png" className="w-32 md:w-52 top-7"/>
-                <h1 className="text-xl sm:text-lg md:text-3xl text-center font-bold">No se han encontrado {name}</h1>
+        <div className="flex justify-center items-center w-full h-72 text-gray-200">
+            <div className="w-fit">
+                <h1 className="text-center text-7xl">·404·</h1>
+                <h2 className="text-lg font-light">No se han encontrado {name}</h2>
             </div>
         </div>
     )

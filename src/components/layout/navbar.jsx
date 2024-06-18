@@ -1,36 +1,59 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import '../../assets/css/navbar.css'
-import {MagnifyingGlassIcon, UserIcon, ShoppingCartIcon} from '@heroicons/react/24/outline'
-import { useSelector } from 'react-redux'
+import { MagnifyingGlassIcon, UserIcon, ShoppingCartIcon, HomeIcon, HeartIcon, ArrowLeftStartOnRectangleIcon } from '@heroicons/react/24/outline'
+import { useSelector, useDispatch} from 'react-redux'
+import { logOut } from "../../redux/slices/user"
+
 
 function Navbar({setSearch, setExpand}){
+    const params = useLocation().pathname
     const {user} = useSelector((state) => state.user)
     const {cart} = useSelector((state) => state.cart)
+    const dispatch = useDispatch()
+
+    console.log(params)
 
     return(
-        <nav className="fixed top-0 w-full bg-green-500 z-30 p-0 md:p-2">
-           <div className='flex items-center'>
-           <div className="rounded-full m-2 md:m-0">
-                <Link className='drop-shadow-lg' to='/'>
-                <img src="/logo.png" id='logo' alt="" />
-                </Link>
-           </div> 
+        <nav className="hidden md:flex flex-col h-screen bottom-0 bg-black w-24 p-2 tertiary z-30">
+           <div className='flex flex-col mx-auto w-4/5 space-y-9 h-full'>
 
-            <div className='w-full flex justify-between m-0 md:mx-4'>
+            <div className="flex justify-center items-center h-20">
+                <Link className='flex justify-center drop-shadow-lg primary rounded' to='/'>
+                <img src="/logo.png" className="w-12 h-12" alt="" />
+                </Link>
+            </div>
+
+            <div className='flex justify-center items-center h-3/5'>
+
+            <div className="space-y-9 h-2/4">
+                <Link to='/' className="flex items-center">
+                    <HomeIcon className={`h-6 w-6
+                    ${params == '/' ? 'primaryColor' : 'white'}`}/>
+                </Link>
+
+                <Link to='/user/favorites' className="flex items-center">
+                    <HeartIcon className={`h-6 w-6
+                    ${params == '/user/favorites' ? 'primaryColor' : 'white'}`}/>
+                </Link>
+
+                <Link to='/user/bought' className="flex items-center">
+                    <ShoppingCartIcon className={`h-6 w-6
+                    ${params == '/user/bought' ? 'primaryColor' : 'white'}`}/>
+                </Link>
+            </div>
+
+            {/*buscador
                 <div id='searchbar' className='flex items-center bg-white p-2 rounded-xl w-full'>
                     <MagnifyingGlassIcon style={{color: 'gray'}} className='w-5 h-5 mx-2'/>
                     <input  onChange={(e) => setSearch(e.target.value)} className="focus:outline-none bg-white w-full" type="text" placeholder="Search..."/>
                 </div>
-
-                {/*User buttons*/}
-                <div className='flex items-center'>
-                
-                  <div className='flex items-center'>
+            
+                <div className='flex flex-col'>
 
                     <button onClick={() => setExpand(prev => !prev)} className={ cart.length > 0 ?
-                      'duration-300 bg-black coursor-pointer hover:shadow-lg flex items-center mx-2 text-white px-2 py-1 rounded-3xl'
+                      'duration-300 bg-black coursor-pointer hover:shadow-lg flex items-center text-white px-2 py-1 rounded-3xl'
                       :
-                      'duration-300 flex items-center coursor-pointer mx-2 text-white px-2 rounded-3xl'
+                      'duration-300 flex items-center coursor-pointer text-white px-2 rounded-3xl'
                     }>
                     
                     {cart.length > 0 && 
@@ -58,10 +81,16 @@ function Navbar({setSearch, setExpand}){
                     }
                     
                   </div>
-          
-                </div>
+                */}
+
             </div>
-           </div>
+
+            <button onClick={() => dispatch(logOut())}
+            className="duration-200 flex justify-center">
+                <ArrowLeftStartOnRectangleIcon className='white w-6 h-6'/>
+            </button>
+
+         </div>
         </nav>
     )
 }

@@ -43,9 +43,26 @@ export const UserOrders = ({token}) => {
 
             :
 
-            <div className="flex justify-center items-center min-h-screen">
-                <img className="animate-bounce" src="/logo.png" alt=""/>
+           <div className='w-full quaternary my-4 rounded-lg duration-200 shadow-sm h-40 animate-pulse'>
+            <div className="flex justify-between items-center p-4 border-b">
+                <div className="md:flex justify-between items-center">
+                    
+                    <div className="bg-gray-200 animate-pulse w-1/4 h-5">
+                    </div>
+
+                    <div className="bg-gray-200 animate-pulse w-1/4 h-5">
+                    </div>
+
+                    <div className="bg-gray-200 animate-pulse w-1/4 h-5">
+                    </div>
+
+                    <div className="bg-gray-200 animate-pulse w-1/4 h-5">
+                    
+                    </div>
+
+                </div>
             </div>
+        </div>
         }
         </div>
     )

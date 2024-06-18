@@ -11,12 +11,12 @@ export const BeatCart = ({beat}) => {
         dispatch(removeBeat(beat))
     }
     return(
-        <li className="flex items-center justify-between p-2">
-            <div className="flex items-center">
+        <li className="flex items-center justify-between">
+            <div className="flex items-center w-4/5">
                 <img className="w-12 h-12 rounded-full mr-3" src={img.url || img } alt="" />
                 <div>
-                <h2 className="text-white font-semibold">{name}</h2>
-                <p className="text-green-500">{artist?.artistName}</p>
+                <h2 className="text-sm text-white font-light">{name}</h2>
+                <p className="text-sm md:text-base text-green-500">{artist?.artistName}</p>
                 </div>
             </div>
 

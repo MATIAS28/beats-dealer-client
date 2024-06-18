@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiUrl = import.meta.env.VITE_SERVER_URL;
+const apiUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:3000/api/'
 
 export const getBeats = async () => {
     try {

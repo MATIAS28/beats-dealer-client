@@ -59,24 +59,20 @@ function PayPage(){
     }
 
     return(
-        <div className="bg-green-500 flex justify-center p-0 m-0 min-h-screen shadow-xl">
+        <div className="flex justify-center h-screen shadow-xl">
 
         <Toaster/>
 
-         <div id="paypage-container" className="bg-black rounded-lg mb-12">
+         <div className="md:w-4/5 h-fit bg-black rounded-lg p-4">
 
-         <div className="relative top-7 flex justify-center flex-wrap-reverse">
-                <img className="absolute w-20 h-20 bg-green-500 rounded-full" src="/logo.png" alt="" />
-         </div>
-
-            <div className="data">
-                <div className="h-[16rem]">
+            <div className="space-y-6">
+                <div className="h-fit">
                     <div className="flex justify-between items-center">
                     <h1 className="text-white text-2xl font-semibold">Resumen del carrito</h1>
                     <p className="text-green-500 text-xl font-semibold">Beats({cart.length})</p>
                     </div>
 
-                    <ul className={cart.length > 2 ? 'flex flex-col overflow-y-scroll h-[12rem] my-4' : 'flex flex-col my-4'}>
+                    <ul className={cart.length > 2 ? 'flex flex-col overflow-y-scroll h-[12rem] space-y-7 my-4' : 'flex flex-col space-y-7 my-4'}>
                         {cart && cart.map((beat, i) => {
                             return(
                                 <BeatCart key={i} beat={beat}/>
@@ -85,14 +81,14 @@ function PayPage(){
                     </ul>
                 </div>
 
-                <div className="my-2">
-                    <div className="flex justify-between shadow-lg p-2 rounded-lg items-center">
+                <div className="border-b py-2">
+                    <div className="flex justify-between shadow-lg rounded-lg items-center">
                     <p className="text-white text-lg font-semibold">Total</p>
                     <p className="text-white text-lg font-semibold">${total}</p>
                     </div>
                 </div>
 
-                <div className='bg-red-500 w-full rounded shadow-lg p-2 my-2 animate-pulse'>
+                <div className='bg-red-500 w-full rounded shadow-lg p-2 animate-pulse'>
                     <p className='text-lg md:text-xl font-semibold text-white'>Aviso</p>
                     <p className='text-sm font-semibold text-white'>
                     Al realizar el pago por este beat, no adquieres los derechos ni la propiedad del mismo, 
@@ -100,7 +96,7 @@ function PayPage(){
                     </p>
                 </div>
 
-                <div className="flex items-start my-3 p-2">
+                <div className="flex items-start">
                     <input defaultChecked={check} onChange={() => setCheck(prev => !prev)} type="checkbox" className="cursor-pointer w-6 h-6"/>
                     <label className="ml-2 text-sm font-medium text-white">
                         Usted al presionar el botón de compra acepta que, está brindando su apoyo a nuestra 

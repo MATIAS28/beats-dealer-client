@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom";
 
 import HomePage from "./routes/home";
+import BeatPage from "./routes/beat";
 import LoginPage from "./routes/login";
 import RegisterPage from "./routes/regitser";
 import UserPage from "./routes/user";
@@ -14,7 +15,8 @@ function AppRoutes(){
         {path: '/', element: <HomePage/>},
         {path: '/login', element: <LoginPage/>},
         {path: '/register', element: <RegisterPage/>},
-        {path: '/user', element: <UserPage/>},
+        {path: '/beat/:id', element: <BeatPage/>},
+        {path: '/user/:section', element: <UserPage/>},
         {path: '/checkout', element: <PayPage/>},
         {path: '/*', element: <HomePage/>}
     ])

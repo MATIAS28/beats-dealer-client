@@ -38,7 +38,7 @@ function Player({currentBeat}){
     
     return(
 
-        <div className='player'>
+        <div className='player w-4/5 md:w-2/4'>
                     
         <audio 
             id='player' 

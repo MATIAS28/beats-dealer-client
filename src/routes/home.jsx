@@ -20,10 +20,15 @@ function HomePage(){
   }, [])
     
   return(
-      <div>
-        <img className='w-full p-0 m-0 duration-150' src="/banner.png" alt=""/>
+      <div className="">
+
+        <h1 className="text-3xl text-white font-semibold">
+          Nuestros Beats
+        </h1>
+
         
-        <div className="mx-auto grid max-w-8xl  grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4">
        
         {beats.length > 0 && !error ? 
 

@@ -16,9 +16,9 @@
 
 #beatPlayer{
     width: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 28;
-    bottom: 20px;
+    bottom: 0;
 }
 
 #player-conatiner{
@@ -37,11 +37,6 @@
   animation: buttonAnimation 300ms ease-in-out ;
 }
 
-@media (max-width: 1200px) {
-  #player-conatiner{
-    width: 90%;
-}
-}
 
 @media (max-width: 768px) {
     #beatPlayer{

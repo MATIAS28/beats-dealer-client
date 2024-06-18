@@ -16,7 +16,7 @@ const Cart = ({setExpand, expand}) => {
 
                 <div className="w-full">
 
-                    <ul className={cart.length > 2 ? 'flex flex-col overflow-y-scroll h-[16rem]' : 'flex flex-col'}>
+                    <ul className={cart.length > 2 ? 'flex flex-col overflow-y-scroll h-[12rem] space-y-7 my-4' : 'flex flex-col space-y-7 my-4'}>
                     {cart.length > 0 ?
                         cart.map((beat, i) => {
                             return(
@@ -26,7 +26,7 @@ const Cart = ({setExpand, expand}) => {
                         
                         :
 
-                        <div className='flex justify-center items-center'>
+                        <div className='flex justify-center items-center h-20'>
                             <div className='flex items-center justify-center p-1 bg-gray-200 rounded-3xl'>
                                 <ExclamationCircleIcon className='w-6 mr-2' style={{color: 'black'}}/>
                                 <h2 className='mr-2 text-sm text-black text-center'>El carrito está vacío</h2>

@@ -3,8 +3,33 @@
 @tailwind utilities;
 
 body{
+    font-family: 'Roboto', sans-serif;
     margin: 0px;
     background-color: rgb(249 250 251);
+}
+
+.primary{
+    background-color: #2ECC71;
+}
+
+.primaryColor{
+    color: #2ECC71;
+}
+
+.secondary{
+    background-color: #0d0d0f;
+}
+
+.tertiary{
+    background-color: #131313;
+}
+
+.quaternary{
+    background-color: #19191b;
+}
+
+.text-green-500{
+    color: #2ECC71 !important;
 }
 
 #bg{
@@ -12,6 +37,14 @@ body{
 }
 
 .white{
+    color: #99a9b5;
+}
+
+.white:hover{
+    color: #2ECC71;
+}
+
+.fill-white{
     color: white;
 }
 

@@ -50,28 +50,40 @@ function BeatPlayer(){
     }
 
     return(
-        <div className='justify-center' style={{display: name ? 'flex' : 'none'}}>
-            <div id='player-conatiner' className='flex justify-between bg-black py-2 px-1 md:p-2 rounded-xl shadow-lg border border-2 border-green-500'>
+        <div className='w-full h-fit md:h-20' style={{display: name ? 'flex' : 'none'}}>
+            <div className='flex bg-black p-2 md:p-2 w-full'>
                 
-                <Player currentBeat={currentBeat}/>
+                <div className='md:flex justify-around items-center w-full'>
 
-                <div id='beat-info' className='flex  items-center mx-2 w-full'>
-                <div className='mr-2'>
-                <img src={img} className='h-12 w-16 rounded-lg' alt=""/>
+                <div className='hidden md:flex items-center w-full md:w-2/5'>
+                <img src={img} className='h-14 w-16 rounded-lg border mr-2' alt=""/>
+                    <div className=''>
+                        <h4 className='text-green-500 text-sm font-semibold'>{artist?.artistName}</h4>
+                        <h3 className='text-white text-xs font-light'>{name}</h3>
+                    </div>
                 </div>
 
-                <div className='w-full'>
-                    <h3 className='text-white text-sm'>{name}</h3>
-                    <h4 className='text-green-500 text-sm font-semibold'>{artist?.artistName}</h4>
+                <div className="flex items-center justify-around h-16 md:h-fit w-full ">
+                    <Player currentBeat={currentBeat}/>
+
+                    <div className="w-1/4 flex items-center justify-end">
+                    <button onClick={handleLike}>
+                    <HeartIcon id='button' style={{color: isFavorite ? 'rgb(239 68 68)' : 'white'}} className='white w-6 h-6 mr-2' />
+                    </button>
+
+                    <button disabled={addCartButton} onClick={addBeatToCart}>
+                    <ShoppingCartIcon id='button' style={{color: addCartButton ? 'rgb(34 197 94)' : 'white'}} className='w-6 h-6' />
+                    </button>
+                </div>
                 </div>
 
-                <button onClick={handleLike}>
-                <HeartIcon id='button' style={{color: isFavorite ? 'rgb(239 68 68)' : 'white'}} className='white w-6 h-6 mr-2' />
-                </button>
-
-                <button disabled={addCartButton} onClick={addBeatToCart}>
-                <ShoppingCartIcon id='button' style={{color: addCartButton ? 'rgb(34 197 94)' : 'white'}} className='w-6 h-6' />
-                </button>
+                <div className='flex md:hidden flex items-center w-full md:w-1/4'>
+                <img src={img} className='h-14 w-16 rounded-lg border mr-2' alt=""/>
+                    <div className=''>
+                        <h4 className='text-green-500 text-sm font-semibold'>{artist?.artistName}</h4>
+                        <h3 className='text-white text-xs font-light'>{name}</h3>
+                    </div>
+                </div>
 
                 </div>
             </div>
